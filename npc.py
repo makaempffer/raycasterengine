@@ -24,6 +24,7 @@ class NPC(AnimatedSprite):
             self.frame_counter = 0
             self.player_search_trigger = False
             self.trigger_radius = 5
+            self.hear_radius = 10
 
 
     def update(self):
@@ -89,7 +90,7 @@ class NPC(AnimatedSprite):
             if self.pain:
                 self.animate_pain()
 
-            elif self.ray_cast_value and self.dist < self.trigger_radius:
+            elif self.ray_cast_value and self.dist < self.trigger_radius or (self.game.player.shot and self.dist < self.hear_radius):
                 self.player_search_trigger = True
                 if self.dist < self.attack_dist:
                     self.animate(self.attack_images)
