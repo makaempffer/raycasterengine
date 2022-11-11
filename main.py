@@ -31,7 +31,7 @@ class Game:
             self.object_renderer = ObjectRenderer(self)
             self.raycasting = RayCasting(self)
             self.object_handler = ObjectHandler(self)
-            self.weapon = Weapon(self)
+            self.weapon = Weapon(self, 'resources/sprites/weapon/shotgun/0.png', 2.5, 90)
             self.sound = Sound(self)
             self.pathfinding = PathFinding(self)
             
@@ -58,6 +58,8 @@ class Game:
         #3D render
         self.object_renderer.draw()
         self.weapon.draw()
+        #crosshair
+        pg.draw.circle(self.screen, 'white', (HALF_WIDTH, HALF_HEIGHT), 1)
 
     def check_events(self):
         self.global_trigger = False

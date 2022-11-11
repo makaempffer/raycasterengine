@@ -11,7 +11,7 @@ class Weapon(AnimatedSprite):
         self.reloading = False
         self.num_images = len(self.images)
         self.frame_counter = 0
-        self.damage = 50
+        self.damage = 20
 
     def animate_shot(self):
         if self.reloading:
@@ -21,6 +21,7 @@ class Weapon(AnimatedSprite):
                 self.image = self.images[0]
                 self.frame_counter += 1
                 if self.frame_counter == self.num_images:
+                    self.game.sound.shotgun_reload.play()
                     self.reloading = False
                     self.frame_counter = 0
     

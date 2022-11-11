@@ -13,7 +13,7 @@ class NPC(AnimatedSprite):
             self.walk_images = self.get_images(self.path + '/walk')
 
             self.attack_dist = 1
-            self.speed = 0.03
+            self.speed = 0.01
             self.size = 10
             self.health = 100
             self.attack_damage = 10
@@ -23,6 +23,7 @@ class NPC(AnimatedSprite):
             self.ray_cast_value = False
             self.frame_counter = 0
             self.player_search_trigger = False
+            self.trigger_radius = 5
 
 
     def update(self):
@@ -88,7 +89,7 @@ class NPC(AnimatedSprite):
             if self.pain:
                 self.animate_pain()
 
-            elif self.ray_cast_value:
+            elif self.ray_cast_value and self.dist < self.trigger_radius:
                 self.player_search_trigger = True
                 if self.dist < self.attack_dist:
                     self.animate(self.attack_images)
