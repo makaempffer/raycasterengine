@@ -12,7 +12,7 @@ class NPC(AnimatedSprite):
             self.pain_images = self.get_images(self.path + '/pain')
             self.walk_images = self.get_images(self.path + '/walk')
 
-            self.attack_dist = randint(3, 6)
+            self.attack_dist = 1
             self.speed = 0.03
             self.size = 10
             self.health = 100
@@ -51,7 +51,7 @@ class NPC(AnimatedSprite):
 
     def attack(self):
         if self.animation_trigger:
-            self.game.sound.npc_shot.play()
+            pass
             if random() < self.accuracy:
                 self.game.player.get_damage(self.attack_damage)
 

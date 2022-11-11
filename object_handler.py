@@ -15,12 +15,13 @@ class ObjectHandler:
         self.npc_positions = {}
 
         #sprite map
-        add_sprite(SpriteObject(game))
-        add_sprite(AnimatedSprite(game))
-        add_sprite(AnimatedSprite(game, pos=(1.5, 1.5)))
-        add_sprite(AnimatedSprite(game, path=self.anim_sprite_path + 'red_light/0.png', pos=(9.5, 7.5)))
+        #add_sprite(SpriteObject(game))
+        #add_sprite(AnimatedSprite(game))
+        #add_sprite(AnimatedSprite(game, pos=(1.5, 1.5)))
+        #add_sprite(AnimatedSprite(game, path=self.anim_sprite_path + 'red_light/0.png', pos=(9.5, 7.5)))
 
         #npc map
+        add_npc(NPC(game, 'resources/sprites/npc/zombie/0.png',(10.5, 5.5), 0.6, 0.38, 11))
         #add_npc(NPC(game))
         #add_npc(NPC(game, pos=(11.5, 4.5)))
 

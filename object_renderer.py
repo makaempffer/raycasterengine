@@ -11,8 +11,6 @@ class ObjectRenderer:
         self.sky_offset = 0
         self.blood_screen = self.get_texture('resources/textures/blood_screen.png', RES)
 
-
-
     def draw(self):
         self.draw_background()
         self.render_game_objects()
@@ -39,7 +37,7 @@ class ObjectRenderer:
 
     def load_wall_textures(self):
         return {
-            1: self.get_texture('resources/textures/1.png'),
+            1: self.get_texture('resources/textures/BRICK_3C.png'),
             2: self.get_texture('resources/textures/2.png'),
             3: self.get_texture('resources/textures/3.png'),
             4: self.get_texture('resources/textures/4.png'),

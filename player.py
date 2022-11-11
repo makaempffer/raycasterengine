@@ -14,12 +14,12 @@ class Player:
     def get_damage(self, damage):
         self.health -= damage
         self.game.object_renderer.player_damage()
-        self.game.sound.player_pain.play()
+        #self.game.sound.player_pain.play()
 
     def single_fire_event(self, event):
         if event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1 and not self.shot and not self.game.weapon.reloading:
-                self.game.sound.shotgun.play()
+                #self.game.sound.shotgun.play()
                 self.shot = True
                 self.game.weapon.reloading = True
 
